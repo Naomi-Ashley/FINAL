@@ -367,19 +367,9 @@ section:nth-of-type(2) ul li img {
       justify-content: flex-start;
   } 
   
-  nav ul li a {
-      text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 1px;
-      padding: 8px 16px;
-      display: block;
-      transition: 0.3s;
-      color:var(--color-text);
-  }
-  
   nav ul li a:hover {
       text-decoration: underline;
-      text-decoration-thickness: -2px;
+      text-decoration-thickness: -2em;
   }
   
    /* HAMBURGER MENU */
