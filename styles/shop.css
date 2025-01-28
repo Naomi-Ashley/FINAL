@@ -16,10 +16,39 @@
   }
   
   :root {
-      --color-text:#111;
-      --color-background:#111;
-  }
-  
+	--color-primary: #111;
+	--color-secondary: whitesmoke;
+	--color-dark: #121212;
+	--color-light: white;
+	--spacing-small: 0.3em;
+	--spacing-medium: 1rem;
+	--spacing-large: 2rem;
+	color-scheme:light dark;
+	--bg-root1:light-dark('Pink', 'green');
+
+
+	--accent-color:var(--color-theme);
+	--bg-root1:light-dark(whitesmoke, black);
+	--color-theme:light-dark(black, whitesmoke);
+	--color-focus:light-dark(dodgerblue, rgb(41, 44, 46));
+}
+
+
+:root:has([value="light"]:checked) {
+	color-scheme: light;
+}
+:root:has([value="dark"]:checked) {
+	color-scheme: dark;
+}
+
+
+body {
+	background-color: var(--bg-root1);
+    color: var(--color-theme);
+}
+
+
+
   /* HEADER */
   header { 
       display: flex;
@@ -35,7 +64,7 @@
   
   
   header.active {
-      background-color: whitesmoke;
+      background-color: white;
   }
   
   
@@ -73,7 +102,7 @@
   header nav button span {
       display: block;
       background-color: #111;
-      height: 2px;
+      height: 10%;
       width: 100%;
   
   }
@@ -107,10 +136,6 @@
       border: none;
    }
   
-   main li h2 {
-      font-size: 0.8em;
-      /* text-align: center; */
-   }
   
   /* SECTIE 1 */
   main section:nth-of-type(1) {
@@ -119,39 +144,192 @@
   
   main section:nth-of-type(1) ul {
       display: flex;
-      overflow: scroll;
+      /* overflow: scroll; */
       position: relative;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      padding: 0;
   }
   
   main section:nth-of-type(1) > a {
       position: absolute;
-      bottom: 80px;  
+      bottom: 8em;  
       left: 50%;    
       transform: translateX(-50%); 
       text-decoration: none;
       background-color: white;
       color: black;
       padding: 1rem;
-      font-size: 1em;  /* Pas de grootte van de tekst aan naar wens */
+      font-size: 1em;  
   }
   
   section:nth-of-type(1) ul li img {
       width: 100vw;
       object-fit: cover;
       height: 100vh;
+      margin-bottom:5%;
+  }
+
+  
+  section:nth-of-type(1) ul li {
+    list-style: none;
+    min-width: 100%;
+  }
+
+  section:nth-of-type(1) ul li p {
+  padding: 2%;
+  }
+
+  section:nth-of-type(1) ul li h2 {
+    text-transform: uppercase;
+    padding: 2%;
+  }
+
+  section:nth-of-type(1) ul li:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section:nth-of-type(1) ul li:nth-of-type(1) > section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+/* Like button via de klasse */
+button.like {
+    color: red; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease; /* Animatie-effecten */
+}
+
+/* Hover-effect */
+button.like:hover {
+    transform: scale(1.2); 
+    color: darkred; 
+}
+
+/* Active state (wanneer erop geklikt wordt) */
+button.like:active {
+    transform: scale(1); 
+    color: pink; 
+}
+
+
+  /* TEXT */
+
+  main > article {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+main > article h3 {
+    padding: 2%;
+    font-weight: inherit;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+
+main > article select {
+margin: 1rem 0;
+  padding: 1rem;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: transparent;
+  border: solid var(--color-theme) .1em;
+}
+
+main > article a {
+margin-bottom: 5%;
+padding: 2%;
+color: var(--color-theme);
+text-transform: uppercase;
+}
+
+
+main > article p {
+padding-block: 2%;
+
+}
+
+main > article > section:nth-of-type(1), 
+main > article > section:nth-of-type(2) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main > article > section:nth-of-type(1) button {
+    background-color: transparent;
+    border: solid var(--color-theme) .1em;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+/* inverted afbeelding */
+main section:nth-of-type(1) ul li:nth-of-type(1) img {
+    transition: .5s;
+}
+
+main section:nth-of-type(1) ul li:nth-of-type(1) img.other-color {
+	filter: invert(1);
+    transition: .5s;
+    scale: 1.1;
+}
+
+
+  /* Knoppen */
+  section:nth-of-type(1) button {   
+    color: var(--color-theme);
+    margin: 5%;
+  }
+  
+  /* Selecteer eerste en tweede knop */
+  section:nth-of-type(1) button:nth-of-type(1) {
+    left: 1em;
+  }
+  
+  section:nth-of-type(1) button:nth-of-type(2) {
+    right: 1em;
   }
   
   /* SECTIE 2 */
-  main section:nth-of-type(2) ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  main section:nth-of-type(2) li h2 {
+    font-size: 0.6em;
+    padding: 0.5em;
+    text-align: center;
+ }
+
+ main section:nth-of-type(2) li p {
+  font-size: 0.8em;
   text-align: center;
-  justify-content: center;
-  }
-  
-  
-  
+  margin: 10%;
+ }
+
+  section:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+    list-style: none; 
+    padding: 0;
+    justify-content: center;
+}
+
+section:nth-of-type(2) ul li img {
+    width: 100%; 
+    padding: 10%;
+    height: auto; 
+    object-fit: cover;
+}
+
   
   /* SECTIE 3 */
   section:nth-of-type(3){
@@ -171,9 +349,16 @@
   }
   
   section:nth-of-type(3) img {
-      width: 65%;
-      margin: 2rem 0 1rem 0;
-  }
+        width: 60%;
+        margin: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
   
   /* MENU NAVIGATIE*/
   nav ul {
@@ -199,9 +384,9 @@
   
    /* HAMBURGER MENU */
   form button {
-      color: red;
       text-align: left;
   }
+  
   /* Menu maar 't werkt niet op 2de pagina, daarbij heb ik QueryselectorAll gebruik en dat werkte niet */
   main > ul:nth-of-type(1) {
       position: absolute;
@@ -211,7 +396,7 @@
       width: 100%;
       background-color: whitesmoke;
       z-index: 10;
-      translate: -101% 0px;
+      translate: -101% 0em;
       transition: .2s;
   }
   
@@ -221,8 +406,8 @@
   
   /* FOOTER */
       footer {
-          background-color: white;
-          color: #111;
+          background-color: var(--bg-root1);
+          color: var(--color-theme);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -235,7 +420,7 @@
       
       footer a {
           text-decoration: none;
-          color: black;
+          color: var(--color-theme);
       }
       
       
@@ -254,8 +439,8 @@
       }
       
       footer section:nth-of-type(1){
-          background-color: black;
-          color: white;
+          background-color: var(--color-theme);
+          color: var(--bg-root1);
           display: flex;
           height: 16rem;
           flex-direction: column;
@@ -269,8 +454,8 @@
       }
       
       footer section:nth-of-type(1) input {
-          background-color: black;
-          border: solid white 1px;
+          background-color: var(--color-theme);
+          border: solid var(--bg-root1) .1em;
           margin: 1rem 0;
           padding: 1rem;
           text-transform: uppercase;
@@ -279,7 +464,7 @@
       }
       
       footer section:nth-of-type(1) input::placeholder {
-          color: white;
+          color: var(--bg-root1);
       }
       
       footer ul li:nth-of-type(1){
