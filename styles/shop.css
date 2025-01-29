@@ -24,7 +24,7 @@
 	--spacing-medium: 1rem;
 	--spacing-large: 2rem;
 	color-scheme:light dark;
-	--bg-root1:light-dark('Pink', 'green');
+	/* --bg-root1:light-dark('Pink', 'green'); */
 
 
 	--accent-color:var(--color-theme);
@@ -57,14 +57,14 @@ body {
       position: relative;
       z-index: 1;
       transition: .2s;
-      padding: 1rem;
+      padding: var(--spacing-medium);
       width: 100%;
       position: absolute;
   }
   
   
   header.active {
-      background-color: white;
+      background-color: var(--color-light);
   }
   
   
@@ -84,7 +84,7 @@ body {
   
   header nav ul {
       display: flex;
-      gap: 1em;
+      gap: var(--spacing-medium);
   }
   
   header nav a {
@@ -113,7 +113,7 @@ body {
       position: relative;
       justify-content: center;
       align-items: center;
-      gap: .3em;
+      gap: var(--spacing-small);
       aspect-ratio: 1;
       width: 1.5em;
   }
@@ -145,7 +145,7 @@ body {
   main section:nth-of-type(1) ul {
       display: flex;
       /* overflow: scroll; */
-      position: relative;
+      /* position: relative; */
       overflow: hidden;
       scroll-behavior: smooth;
       padding: 0;
@@ -157,9 +157,9 @@ body {
       left: 50%;    
       transform: translateX(-50%); 
       text-decoration: none;
-      background-color: white;
-      color: black;
-      padding: 1rem;
+      background-color: var(--color-light);
+      color: var(--color-dark);
+      padding: var(--spacing-medium);
       font-size: 1em;  
   }
   
@@ -204,7 +204,7 @@ button.like {
     color: red; 
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.5rem;
+    padding:var(--spacing-small);
     transition: transform 0.3s ease, color 0.3s ease; /* Animatie-effecten */
 }
 
@@ -343,7 +343,7 @@ section:nth-of-type(2) ul li img {
   section:nth-of-type(3) p {
       text-align: center;
       width: 100%;
-      padding: 2rem;
+      padding: var(--spacing-large);
       line-height: 2rem;
       font-size: .9rem;
   }
@@ -381,10 +381,10 @@ section:nth-of-type(2) ul li img {
   main > ul:nth-of-type(1) {
       position: absolute;
       top: 4rem;
-      padding: 1rem;
+      padding: var(--spacing-medium);
       height: 100%;
       width: 100%;
-      background-color: whitesmoke;
+      background-color: var(--color-secondary);
       z-index: 10;
       translate: -101% 0em;
       transition: .2s;
@@ -417,11 +417,11 @@ section:nth-of-type(2) ul li img {
       footer ul {
           display: flex;
           flex-direction: column;
-          gap: 1.5rem;
+          gap: var(--spacing-medium);
       }
       
       footer section {
-          padding: 2rem;
+          padding: var(--spacing-large);
       }
       
       footer ul li {
@@ -446,8 +446,8 @@ section:nth-of-type(2) ul li img {
       footer section:nth-of-type(1) input {
           background-color: var(--color-theme);
           border: solid var(--bg-root1) .1em;
-          margin: 1rem 0;
-          padding: 1rem;
+          margin: var(--spacing-medium) 0;
+          padding: var(--spacing-medium);
           text-transform: uppercase;
           width: 100%;
           font-weight: 300;

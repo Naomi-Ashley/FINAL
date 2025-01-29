@@ -8,8 +8,10 @@ var likeButton = document.querySelector('main > article section button:nth-of-ty
 var dressItem = document.querySelector('main section:nth-of-type(1) ul li:nth-of-type(1) img')
 var dressText = document.querySelector('main section:nth-of-type(1) ul li:nth-of-type(1) h2')
 
-
+//Jurk geholden door Ali Mahmed 4de jaarsstudent
+if(dressText){
 dressText.textContent = 'RAYNE DRESS'
+}
 
 MenuButton.onclick = MenuOpen;
 function MenuOpen() {
@@ -18,6 +20,7 @@ function MenuOpen() {
     headerItem.classList.toggle('active');
 } 
 
+//Like knop v/ de lesstof
 if(likeButton){
 
 likeButton.addEventListener('click', function () {
@@ -26,7 +29,7 @@ likeButton.addEventListener('click', function () {
 
 }
 
-
+//Geluid v/ oude CSS map, geholpen door Sanne 't hoofd
 var audio = new Audio ("./audio/Guitar90s.mp3")
 audio.loop = true
 
@@ -44,7 +47,7 @@ button.addEventListener ("click", ()=> {
 })
 }
 
-
+//Jurk oranje
 if(dressItem){
     dressItem.addEventListener('click', ()=>{
         dressItem.classList.toggle('other-color')
